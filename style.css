@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --softOrange: hsl(14, 88%, 65%);
+  --theDarkGrayBlue: hsl(237, 12%, 33%);
+  --darkGrayBlue: hsl(240, 6%, 50%);
+  --lightGrayBlue: hsl(240, 5%, 91%);
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+main {
+    background: white;
+    border-radius: 30px;
+    height: 509px;
+    width: 920px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-gap: 6rem;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 1260% 65%;
+}
+
+.answer {
+    display: none;
+}
+
+.accordion {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.questions {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.questions-answers {
+    width: 350px;
+    border-bottom: 2px solid #e3e3e4;
+}
+
+.title {
+    font-size: 3rem;
+    margin-top: 0px;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: (var(--veryDarkGrayBlue));
+    margin: 1.4rem 0rem;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.question img {
+    align-self: center;
+}
+
+.image-outer {
+    position: relative;
+}
+
+.image-inner {
+    background: url(./images/illustration-woman-online-desktop.svg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 120% center;
+}
+
+.box {
+    position: absolute;
+    top: 41%;
+    left: -23%;
+}
+
+.active img {
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in;
+}
+
+
+
+.active h3 {
+    color: orange;
+}
+
+.questions-answers.active .answer {
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 700px){
+    main {
+        width: 350px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+        grid-gap: 0.5rem;
+        position: relative;
+        padding: 1rem;
+        height: 530px;
+    }
+
+    .image-outer {
+        background: url(./images/illustration-woman-online-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: center 590%;
+    }
+
+    .image-inner {
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        background-size: 72%;
+        background-position: center;
+        top: -100%;
+       
+    }
+
+    .box {
+        width: 55px;
+        left: 19%;
+        top: -30%;
+       
+    }
+
+    .accordion {
+        margin-top: 0px;
+    }
+
+    .questions-answers {
+         width: 100%;
+    }
+
+    .title {
+        text-align: center;
+        margin-top: -20px;
+    }
+
+    .questions-answers.active .answer {
+        margin-bottom: 5px;
+    }
+}
+
